@@ -7,52 +7,41 @@
     tools:context=".GameActivity">
 
     <ImageView
-        android:id="@+id/right_down"
-        android:layout_width="136dp"
-        android:layout_height="195dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="170dp"
+        android:id="@+id/middle"
+        android:layout_width="112dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="328dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/right_up"
-        app:srcCompat="@drawable/card_back" />
-
-    <ImageView
-        android:id="@+id/left_down"
-        android:layout_width="136dp"
-        android:layout_height="195dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="170dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/right_down"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/left_up"
-        app:srcCompat="@drawable/card_back" />
-
-    <ImageView
-        android:id="@+id/right_up"
-        android:layout_width="136dp"
-        android:layout_height="195dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="171dp"
-        android:layout_marginEnd="75dp"
-        app:layout_constraintBottom_toTopOf="@+id/right_down"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/right"
+        app:layout_constraintStart_toEndOf="@+id/left"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/card_back" />
 
     <ImageView
-        android:id="@+id/left_up"
-        android:layout_width="136dp"
-        android:layout_height="195dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="171dp"
-        app:layout_constraintBottom_toTopOf="@id/left_down"
-        app:layout_constraintEnd_toStartOf="@id/right_up"
+        android:id="@+id/right"
+        android:layout_width="112dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="328dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/middle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/card_back" />
+
+    <ImageView
+        android:id="@+id/left"
+        android:layout_width="112dp"
+        android:layout_height="153dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="328dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/card_back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

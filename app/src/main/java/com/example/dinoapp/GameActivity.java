@@ -4,16 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
-    ImageView right_down, right_up, left_down, left_up;
+    private int count = 0;
+    ImageView left, middle, right;
     List<Integer> cards;
 
 
@@ -22,79 +27,106 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        right_down = (ImageView) findViewById(R.id.right_down);
-        right_up = (ImageView) findViewById(R.id.right_up);
-        left_down = (ImageView) findViewById(R.id.left_down);
-        left_up = (ImageView) findViewById(R.id.left_up);
+        right = (ImageView) findViewById(R.id.right);
+        left = (ImageView) findViewById(R.id.left);
+        middle = (ImageView) findViewById(R.id.middle);
+
+
 
         cards = new ArrayList<>();
         cards.add(107);
         cards.add(207);
-        cards.add(307);
         cards.add(407);
 
         Collections.shuffle(cards);
 
-        right_down.setOnClickListener(new View.OnClickListener() {
+        left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //card assignments
                 if(cards.get(0) == 107) {
-                    right_down.setImageResource(R.drawable.spade);
+                    left.setImageResource(R.drawable.spade);
+                    Toast.makeText(GameActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
                 } else if (cards.get(0) == 207) {
-                    right_down.setImageResource(R.drawable.spade);
-                } else if (cards.get(0) == 307) {
-                    right_down.setImageResource(R.drawable.happy);
+                    left.setImageResource(R.drawable.happy);
                 } else if (cards.get(0) == 407) {
-                    right_down.setImageResource(R.drawable.pokemon_card);
+                    left.setImageResource(R.drawable.pokemon_card);
+                }
+
+                if(cards.get(1) == 107) {
+                    middle.setImageResource(R.drawable.spade);
+                } else if (cards.get(1) == 207) {
+                    middle.setImageResource(R.drawable.happy);
+                } else if (cards.get(1) == 407) {
+                    middle.setImageResource(R.drawable.pokemon_card);
+                }
+
+                if(cards.get(2) == 107) {
+                    right.setImageResource(R.drawable.spade);
+                } else if (cards.get(2) == 207) {
+                    right.setImageResource(R.drawable.happy);
+                } else if (cards.get(2) == 407) {
+                    right.setImageResource(R.drawable.pokemon_card);
                 }
             }
         });
 
-        right_up.setOnClickListener(new View.OnClickListener() {
+        middle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //card assignments
+                if(cards.get(1) == 107) {
+                    middle.setImageResource(R.drawable.spade);
+                    Toast.makeText(GameActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
+                } else if (cards.get(1) == 207) {
+                    middle.setImageResource(R.drawable.happy);
+                } else if (cards.get(1) == 407) {
+                    middle.setImageResource(R.drawable.pokemon_card);
+                }
+
                 if(cards.get(0) == 107) {
-                    right_up.setImageResource(R.drawable.spade);
+                    left.setImageResource(R.drawable.spade);
                 } else if (cards.get(0) == 207) {
-                    right_up.setImageResource(R.drawable.spade);
-                } else if (cards.get(0) == 307) {
-                    right_up.setImageResource(R.drawable.happy);
+                    left.setImageResource(R.drawable.happy);
                 } else if (cards.get(0) == 407) {
-                    right_up.setImageResource(R.drawable.pokemon_card);
+                    left.setImageResource(R.drawable.pokemon_card);
+                }
+                if(cards.get(2) == 107) {
+                    right.setImageResource(R.drawable.spade);
+                    Toast.makeText(GameActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
+                } else if (cards.get(2) == 207) {
+                    right.setImageResource(R.drawable.happy);
+                } else if (cards.get(2) == 407) {
+                    right.setImageResource(R.drawable.pokemon_card);
                 }
             }
         });
 
-        left_down.setOnClickListener(new View.OnClickListener() {
+        right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //card assignments
-                if(cards.get(0) == 107) {
-                    left_down.setImageResource(R.drawable.spade);
-                } else if (cards.get(0) == 207) {
-                    left_down.setImageResource(R.drawable.spade);
-                } else if (cards.get(0) == 307) {
-                    left_down.setImageResource(R.drawable.happy);
-                } else if (cards.get(0) == 407) {
-                    left_down.setImageResource(R.drawable.pokemon_card);
+                if(cards.get(2) == 107) {
+                    right.setImageResource(R.drawable.spade);
+                    Toast.makeText(GameActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
+                } else if (cards.get(2) == 207) {
+                    right.setImageResource(R.drawable.happy);
+                } else if (cards.get(2) == 407) {
+                    right.setImageResource(R.drawable.pokemon_card);
                 }
-            }
-        });
-
-        left_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //card assignments
+                if(cards.get(1) == 107) {
+                    middle.setImageResource(R.drawable.spade);
+                } else if (cards.get(1) == 207) {
+                    middle.setImageResource(R.drawable.happy);
+                } else if (cards.get(1) == 407) {
+                    middle.setImageResource(R.drawable.pokemon_card);
+                }
                 if(cards.get(0) == 107) {
-                    left_up.setImageResource(R.drawable.spade);
+                    left.setImageResource(R.drawable.spade);
                 } else if (cards.get(0) == 207) {
-                    left_up.setImageResource(R.drawable.spade);
-                } else if (cards.get(0) == 307) {
-                    left_up.setImageResource(R.drawable.happy);
+                    left.setImageResource(R.drawable.happy);
                 } else if (cards.get(0) == 407) {
-                    left_up.setImageResource(R.drawable.pokemon_card);
+                    left.setImageResource(R.drawable.pokemon_card);
                 }
             }
         });
