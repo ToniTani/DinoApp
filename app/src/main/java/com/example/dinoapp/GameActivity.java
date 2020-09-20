@@ -21,24 +21,36 @@ public class GameActivity extends AppCompatActivity {
     ImageView left, middle, right;
     List<Integer> cards;
 
+    Button newGame;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        right = (ImageView) findViewById(R.id.right);
-        left = (ImageView) findViewById(R.id.left);
-        middle = (ImageView) findViewById(R.id.middle);
+        right = findViewById(R.id.right);
+        left = findViewById(R.id.left);
+        middle = findViewById(R.id.middle);
 
-
+        newGame = findViewById(R.id.newGameButton);
 
         cards = new ArrayList<>();
         cards.add(107);
         cards.add(207);
         cards.add(407);
-
         Collections.shuffle(cards);
+
+        newGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Collections.shuffle(cards);
+
+                left.setImageResource(R.drawable.card_back);
+                middle.setImageResource(R.drawable.card_back);
+                right.setImageResource(R.drawable.card_back);
+            }
+        });
 
         left.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +105,6 @@ public class GameActivity extends AppCompatActivity {
                 }
                 if(cards.get(2) == 107) {
                     right.setImageResource(R.drawable.spade);
-                    Toast.makeText(GameActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
                 } else if (cards.get(2) == 207) {
                     right.setImageResource(R.drawable.happy);
                 } else if (cards.get(2) == 407) {
@@ -130,10 +141,6 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         });
-
-    }
-    public void assignImages ()
-    {
 
     }
 }
