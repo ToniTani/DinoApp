@@ -15,8 +15,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 5000;
-
     ImageView image;
     Animation textAnimation, imgAnimation;
     TextView grave;
@@ -46,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         grave = findViewById(R.id.grave);
         grave.setAnimation(textAnimation);
 
+        int SPLASH_SCREEN = 5000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },SPLASH_SCREEN);
+        }, SPLASH_SCREEN);
 
     }
 }
