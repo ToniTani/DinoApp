@@ -3,6 +3,7 @@ package com.example.dinoapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -11,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dinoapp.model.Score;
+
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -22,6 +26,9 @@ public class GameActivity extends AppCompatActivity {
     private int count = 0;
     ImageView left, middle, right;
     List<Integer> cards;
+    private int scoreCounter = 0;
+    private Score score;
+    private TextView scoreTextView;
 
     Button newGame;
 
@@ -30,6 +37,9 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        scoreTextView = findViewById(R.id.score_text);
+        score = new Score(); // score object
 
         right = findViewById(R.id.right);
         left = findViewById(R.id.left);
@@ -68,11 +78,16 @@ public class GameActivity extends AppCompatActivity {
                 //card assignments
                 if(cards.get(0) == 107) {
                     left.setImageResource(R.drawable.spade);
-                    Toast.makeText(GameActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
+                    addPoints();
+                    Toast.makeText(GameActivity.this, "You Won 200$!", Toast.LENGTH_SHORT).show();
                 } else if (cards.get(0) == 207) {
                     left.setImageResource(R.drawable.happy);
+                    deductPoints();
+                    Toast.makeText(GameActivity.this, "You lost 100$ :(", Toast.LENGTH_SHORT).show();
                 } else if (cards.get(0) == 407) {
                     left.setImageResource(R.drawable.pokemon_card);
+                    deductPoints();
+                    Toast.makeText(GameActivity.this, "You lost 100$ :(", Toast.LENGTH_SHORT).show();
                 }
 
                 if(cards.get(1) == 107) {
@@ -99,11 +114,16 @@ public class GameActivity extends AppCompatActivity {
                 //card assignments
                 if(cards.get(1) == 107) {
                     middle.setImageResource(R.drawable.spade);
-                    Toast.makeText(GameActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
+                    addPoints();
+                    Toast.makeText(GameActivity.this, "You Won 200$!", Toast.LENGTH_SHORT).show();
                 } else if (cards.get(1) == 207) {
                     middle.setImageResource(R.drawable.happy);
+                    deductPoints();
+                    Toast.makeText(GameActivity.this, "You lost 100$ :(", Toast.LENGTH_SHORT).show();
                 } else if (cards.get(1) == 407) {
                     middle.setImageResource(R.drawable.pokemon_card);
+                    deductPoints();
+                    Toast.makeText(GameActivity.this, "You lost 100$ :(", Toast.LENGTH_SHORT).show();
                 }
 
                 if(cards.get(0) == 107) {
@@ -129,11 +149,16 @@ public class GameActivity extends AppCompatActivity {
                 //card assignments
                 if(cards.get(2) == 107) {
                     right.setImageResource(R.drawable.spade);
-                    Toast.makeText(GameActivity.this, "You Won!", Toast.LENGTH_SHORT).show();
+                    addPoints();
+                    Toast.makeText(GameActivity.this, "You Won 200$!", Toast.LENGTH_SHORT).show();
                 } else if (cards.get(2) == 207) {
                     right.setImageResource(R.drawable.happy);
+                    deductPoints();
+                    Toast.makeText(GameActivity.this, "You lost 100$ :(", Toast.LENGTH_SHORT).show();
                 } else if (cards.get(2) == 407) {
                     right.setImageResource(R.drawable.pokemon_card);
+                    deductPoints();
+                    Toast.makeText(GameActivity.this, "You lost 100$ :(", Toast.LENGTH_SHORT).show();
                 }
                 if(cards.get(1) == 107) {
                     middle.setImageResource(R.drawable.spade);
@@ -151,6 +176,22 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+    private void addPoints() {
+        scoreCounter += 200;
+        score.setScore(scoreCounter);
+        scoreTextView.setText(MessageFormat.format("Money ${0}", String.valueOf(score.getScore())));
+
+        Log.d("SCORE", "addpoints" + score.getScore());
+    }
+    private void deductPoints() {
+        scoreCounter -= 100;
+        if (scoreCounter <= 0) {
+            scoreCounter = 0;
+        }
+        score.setScore(scoreCounter);
+        scoreTextView.setText(MessageFormat.format("Money ${0}", String.valueOf(score.getScore())));
 
     }
 }
