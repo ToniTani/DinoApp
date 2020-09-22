@@ -1,9 +1,6 @@
 package com.example.dinoapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,14 +9,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.dinoapp.model.Score;
+import com.example.dinoapp.util.Prefs;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -29,8 +27,10 @@ public class GameActivity extends AppCompatActivity {
     private int scoreCounter = 0;
     private Score score;
     private TextView scoreTextView;
+    private Prefs prefs;
 
     Button newGame;
+    Button refreshGame;
 
 
     @Override
@@ -40,18 +40,23 @@ public class GameActivity extends AppCompatActivity {
 
         scoreTextView = findViewById(R.id.score_text);
         score = new Score(); // score object
+        prefs = new Prefs(GameActivity.this); // preferences
+        TextView highScoreTextView = findViewById(R.id.high_scoretext);
 
-        right = findViewById(R.id.right);
-        left = findViewById(R.id.left);
-        middle = findViewById(R.id.middle);
+        right = findViewById(R.id.right); // image buttons
+        left = findViewById(R.id.left); // image buttons
+        middle = findViewById(R.id.middle); // image buttons
 
-        newGame = findViewById(R.id.newGameButton);
+        newGame = findViewById(R.id.newGameButton); // action buttons
+        refreshGame = findViewById(R.id.refresh_btn); // action button
 
         cards = new ArrayList<>();
         cards.add(107);
         cards.add(207);
         cards.add(407);
         Collections.shuffle(cards);
+
+        highScoreTextView.setText(MessageFormat.format("High Score ${0}", String.valueOf(prefs.getHighScore())));
 
         newGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,14 +181,21 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         });
+        refreshGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                finish();
+                startActivity(getIntent());
+            }
+        });
     }
     private void addPoints() {
         scoreCounter += 200;
         score.setScore(scoreCounter);
         scoreTextView.setText(MessageFormat.format("Money ${0}", String.valueOf(score.getScore())));
 
-        Log.d("SCORE", "addpoints" + score.getScore());
+        // Log.d("SCORE", "addpoints" + score.getScore());
     }
     private void deductPoints() {
         scoreCounter -= 100;
@@ -194,4 +206,11 @@ public class GameActivity extends AppCompatActivity {
         scoreTextView.setText(MessageFormat.format("Money ${0}", String.valueOf(score.getScore())));
 
     }
+
+    @Override
+    protected void onPause() {
+        prefs.saveHighScore(score.getScore());
+        super.onPause();
+    }
+
 }
