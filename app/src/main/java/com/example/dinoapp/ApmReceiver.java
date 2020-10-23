@@ -12,8 +12,8 @@ public class ApmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
             boolean state = intent.getBooleanExtra("state", false);
             if (state) {
-                Toast.makeText(context, "AIRPLANE OFF", Toast.LENGTH_SHORT).show();
-            } else { Toast.makeText(context, "AIRPLANE ON", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "AIRPLANE ON", Toast.LENGTH_SHORT).show();
+            } else { Toast.makeText(context, "AIRPLANE OFF", Toast.LENGTH_SHORT).show();
                 }
             }
         }
