@@ -22,18 +22,19 @@
 
     <Button
         android:id="@+id/playButton"
-        style="@android:style/Widget.Material.Light.Button"
-        android:layout_width="95dp"
-        android:layout_height="46dp"
+        style="@android:style/Widget.Material.Light.Button.Borderless"
+        android:layout_width="83dp"
+        android:layout_height="64dp"
         android:layout_marginTop="73dp"
         android:layout_marginEnd="137dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/ic_flat_mountains"
-        android:text="CASINO"
+        android:background="@drawable/happy"
+        android:backgroundTint="@color/ic_launcher_background"
+        android:text="DINO CASINO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_home"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
