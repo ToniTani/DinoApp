@@ -55,6 +55,7 @@ public class NotificationsFragment extends Fragment {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getActivity().getApplicationContext(),R.raw.tollbell);
                         mediaPlayer.start();
                         resetTimer();
+                        playImgButton.setVisibility(View.VISIBLE);
                     }
 
                 }.start();
