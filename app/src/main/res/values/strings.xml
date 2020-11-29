@@ -2,6 +2,6 @@
     <string name="app_name">DinoApp</string>
     <string name="title_activity_bottom_nav">MainActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Location</string>
+    <string name="title_notifications">Timer</string>
 </resources>

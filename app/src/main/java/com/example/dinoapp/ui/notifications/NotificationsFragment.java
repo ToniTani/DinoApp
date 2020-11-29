@@ -20,10 +20,13 @@ import com.example.dinoapp.R;
 
 public class NotificationsFragment extends Fragment {
 
+    public long START_TIME_IN_MILLIS = 600000;
     TextView timerTextView;
     SeekBar timerSeekBar;
     CountDownTimer countDownTimer;
-    boolean timerIsActive = false;
+    boolean timerIsActive;
+
+    public long timeLeft = START_TIME_IN_MILLIS;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -43,13 +46,12 @@ public class NotificationsFragment extends Fragment {
                 timerSeekBar.setEnabled(false);
                 countDownTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000 + 100, 1000) {
 
-
                     @Override
                     public void onTick(long millisUntilFinished) {
-                        updateTimer((int) millisUntilFinished / 1000);
-
+                       // timerTextView.setText((int) millisUntilFinished);
+                        timeLeft = millisUntilFinished;
+                        updateTimer((int) + millisUntilFinished / 1000);
                     }
-
                     @Override
                     public void onFinish() {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getActivity().getApplicationContext(),R.raw.tollbell);
@@ -57,9 +59,7 @@ public class NotificationsFragment extends Fragment {
                         resetTimer();
                         playImgButton.setVisibility(View.VISIBLE);
                     }
-
                 }.start();
-                timerIsActive = true;
                 playImgButton.setVisibility(View.INVISIBLE);
 
             }
@@ -68,10 +68,12 @@ public class NotificationsFragment extends Fragment {
         ImageButton pauseImgButton = view.findViewById(R.id.pauseImgButton);
         pauseImgButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 countDownTimer.cancel();
-                timerIsActive = false;
                 playImgButton.setVisibility(View.VISIBLE);
+                //timerTextView.setText((int) millisUntilFinished);
+                //updateTimer(timerSeekBar.getProgress());
 
             }
         });
@@ -84,8 +86,7 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-        timerSeekBar.setMax(600);
-        timerSeekBar.setProgress(30);
+        timerSeekBar.setMax(60);
 
 
         timerSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -121,10 +122,11 @@ public class NotificationsFragment extends Fragment {
                 timerTextView.setText(Integer.toString(minutes) + ":" + secondString);
     }
     public void resetTimer() {
-        timerTextView.setText("00:30");
+        timerTextView.setText("0:30");
         timerSeekBar.setProgress(30);
         timerSeekBar.setEnabled(true);
         timerIsActive = false;
 
     }
+
 }
