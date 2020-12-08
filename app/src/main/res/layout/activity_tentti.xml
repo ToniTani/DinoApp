@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TenttiActivity">
+
+    <TextView
+        android:id="@+id/infoTeksti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="145dp"
+        android:fontFamily="@font/mystery_quest"
+        android:text="Mikä kortti?"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/korttiKuva"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/buttonJatka"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="123dp"
+        android:text="Jätkä"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/korttiKuva" />
+
+    <Button
+        android:id="@+id/buttonKing"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="123dp"
+        android:text="Kuningas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/korttiKuva" />
+
+    <Button
+        android:id="@+id/buttonJoker"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="123dp"
+        android:text="Jokeri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/korttiKuva" />
+
+    <ImageView
+        android:id="@+id/korttiKuva"
+        android:layout_width="133dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="139dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/spade" />
+
+    <Button
+        android:id="@+id/buttonSpade"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="123dp"
+        android:text="Ässä"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/korttiKuva" />
+
+    <Button
+        android:id="@+id/buttonQueen"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="123dp"
+        android:text="Kuningatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/korttiKuva" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="327dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonJoker" />
+
+    <TextView
+        android:id="@+id/textCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="186dp"
+        android:layout_marginBottom="29dp"
+        android:text="OIKEIN!"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonJoker" />
+
+    <TextView
+        android:id="@+id/pointsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="281dp"
+        android:layout_marginEnd="34dp"
+        android:text="Pisteet"
+        app:layout_constraintEnd_toStartOf="@+id/korttiKuva"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonTulos"
+        android:layout_width="92dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="221dp"
+        android:layout_marginEnd="16dp"
+        android:text="Tulos"
+        app:layout_constraintEnd_toStartOf="@+id/korttiKuva"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

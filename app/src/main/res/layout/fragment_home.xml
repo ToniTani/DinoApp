@@ -25,7 +25,7 @@
         style="@android:style/Widget.Material.Light.Button.Borderless"
         android:layout_width="83dp"
         android:layout_height="64dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="63dp"
         android:layout_marginEnd="137dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/happy"
@@ -37,4 +37,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_home"
         app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/searchCompanyText"
+        android:layout_width="203dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="144dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Search Company"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playButton" />
+
+    <Button
+        android:id="@+id/findCompanyButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="141dp"
+        android:text="Find"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/searchCompanyText"
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        app:layout_constraintVertical_bias="0.666" />
 </androidx.constraintlayout.widget.ConstraintLayout>
