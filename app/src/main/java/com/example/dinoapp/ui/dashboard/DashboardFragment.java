@@ -45,7 +45,6 @@ public class DashboardFragment extends Fragment implements LocationListener {
     private static final String TAG = "MyLocation";
 
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
@@ -70,13 +69,13 @@ public class DashboardFragment extends Fragment implements LocationListener {
 
             @Override
             public void onLocationChanged(Location location) {
-
                 textView1.setText("Latitude: " + location.getLatitude());
                 textView2.setText("Longitude: " + location.getLongitude());
                 textView3.setText("Address: " + getAddress(location));
-    //            if (location != null)
-  //                  Log.v("Location Changed", location.getLatitude() + " and " + location.getLongitude());
-   //             mLocationManager.removeUpdates(mLocationListener);
+
+                //            if (location != null)
+                //            Log.v("Location Changed", location.getLatitude() + " and " + location.getLongitude());
+                //            mLocationManager.removeUpdates(mLocationListener);
 
             }
 
@@ -102,7 +101,6 @@ public class DashboardFragment extends Fragment implements LocationListener {
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
         ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
     } else {
-
         mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000000, 0, mLocationListener);
 
         location = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
