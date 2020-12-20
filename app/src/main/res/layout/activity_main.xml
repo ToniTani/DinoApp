@@ -29,7 +29,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/mystery_quest"
-        android:text='"Rise From Your Grave!"'
+        android:text="@string/rise_from_your_grave"
         android:textColor="#EC407A"
         android:textColorHint="#EC407A"
         android:textSize="36sp"

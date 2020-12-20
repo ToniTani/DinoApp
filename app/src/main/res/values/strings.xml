@@ -4,4 +4,18 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Location</string>
     <string name="title_notifications">Timer</string>
+    <string name="find">Find</string>
+    <string name="dino_casino">DINO CASINO</string>
+    <string name="search_company">Search Company</string>
+    <string name="address">address</string>
+    <string name="show_location">Show Location</string>
+    <string name="longitude">longitude</string>
+    <string name="high_score">High Score</string>
+    <string name="new_game">New Game</string>
+    <string name="casino">CASINO</string>
+    <string name="money_score">Money Score</string>
+    <string name="find_spade_and_win_money">find Spade and win money!</string>
+    <string name="rise_from_your_grave">Rise From Your Grave!</string>
+    <string name="latitude">latitude</string>
+    <string name="company_name">Company Name</string>
 </resources>

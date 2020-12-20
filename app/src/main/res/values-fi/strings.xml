@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Dinosaurus Appi</string>
+    <string name="title_activity_bottom_nav">Päänäkymä</string>
+    <string name="title_home">Koti</string>
+    <string name="title_dashboard">Sijainti</string>
+    <string name="title_notifications">Munakello</string>
+    <string name="find">Etsi</string>
+    <string name="dino_casino">DINO KASINO</string>
+    <string name="search_company">Etsi yritystä</string>
+    <string name="address">osoite</string>
+    <string name="show_location">Sijainti</string>
+    <string name="longitude">pituusaste</string>
+    <string name="high_score">Korkein Tulos</string>
+    <string name="new_game">Uusi Peli</string>
+    <string name="casino">KASINO</string>
+    <string name="money_score">Rahat</string>
+    <string name="find_spade_and_win_money">löydä ÄSSÄ ja voita rahaa!</string>
+    <string name="rise_from_your_grave">Nouse Haudastasi!</string>
+    <string name="latitude">leveysaste</string>
+    <string name="company_name">Yrityksen nimi</string>
+</resources>
