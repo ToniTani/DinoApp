@@ -8,6 +8,7 @@ The search results show the company's name, business ID, company form and date o
 
 ## Casino Game
 1/3 change of winnig, right answer +200 and wrong answer -100. Uses shared preferences to save high score.
+![game2](https://user-images.githubusercontent.com/43187463/102724514-b3380080-4318-11eb-82ce-9bf7b8afef89.gif)
 
 
 ## Location on app and on a new webview
