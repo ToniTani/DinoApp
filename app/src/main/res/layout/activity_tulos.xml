@@ -16,7 +16,7 @@
         android:layout_marginTop="164dp"
         android:layout_marginEnd="145dp"
         android:fontFamily="@font/mystery_quest"
-        android:text="Tuloksesi on"
+        android:text="@string/tuloksesi_on"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
@@ -31,7 +31,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="214dp"
         android:fontFamily="@font/allan_bold"
-        android:text="3"
+        android:text="@string/_3"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,5 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/abc_vector_test" />
+        app:srcCompat="@drawable/abc_vector_test"
+        android:contentDescription="@string/todo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
