@@ -35,7 +35,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/mystery_quest"
-        android:text="find the spade to get money"
+        android:text="find Spade and win money!"
         android:textColor="#651FFF"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/middle"
@@ -43,7 +43,7 @@
         app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.892" />
 
     <ImageView
         android:id="@+id/middle"
@@ -127,7 +127,7 @@
         android:layout_width="116dp"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/mystery_quest"
@@ -136,24 +136,11 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/middle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="#7E57C2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="#F8BBD0"
-        app:itemTextColor="#B3E5FC"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -162,7 +149,7 @@
         android:layout_marginStart="309dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="47dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/ic_launcher_background"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,9 +157,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/right"
-        app:layout_constraintVertical_bias="0.967"
+        app:layout_constraintVertical_bias="0.918"
         app:srcCompat="@drawable/ic_baseline_refresh_24" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

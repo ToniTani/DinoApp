@@ -1,64 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardBackgroundColor="#F0DCA6E4"
+    >
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/example_company"
+    <LinearLayout
+        android:id="@+id/linear_Layout"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        card_view:cardCornerRadius="20dp"
-        card_view:cardUseCompatPadding="true"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/name"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="16dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="Company Name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:text="name"
-                android:textColor="@android:color/primary_text_light"
-                android:textSize="25sp"
-                android:textStyle="bold" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/card_content"
+        <RelativeLayout
+            android:id="@+id/expandableLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:visibility="gone">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/businessId"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_gravity="left"
-                android:text="businessId"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:text="1-323283" />
 
             <TextView
                 android:id="@+id/companyForm"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_gravity="left"
-                android:text="companyForm"
-                android:textColor="@android:color/holo_blue_dark"
-                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
-                />
-        </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:text="Oy" />
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/registrationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="12.12.2012"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_below="@id/businessId"/>
 
-</LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

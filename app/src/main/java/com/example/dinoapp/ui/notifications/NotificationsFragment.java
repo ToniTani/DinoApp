@@ -25,6 +25,8 @@ public class NotificationsFragment extends Fragment {
     SeekBar timerSeekBar;
     CountDownTimer countDownTimer;
     boolean timerIsActive;
+    long getTimeLeft;
+    String startTime;
 
     public long timeLeft = START_TIME_IN_MILLIS;
 
@@ -69,10 +71,29 @@ public class NotificationsFragment extends Fragment {
         pauseImgButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
+
             {
                 countDownTimer.cancel();
                 playImgButton.setVisibility(View.VISIBLE);
-                //timerTextView.setText((int) millisUntilFinished);
+
+                {
+                    countDownTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000 + 100, 1000) {
+
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+                            timeLeft = millisUntilFinished;
+                            updateTimer((int) + millisUntilFinished / 1000);
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            MediaPlayer mediaPlayer = MediaPlayer.create(getActivity().getApplicationContext(),R.raw.tollbell);
+                            mediaPlayer.start();
+                            resetTimer();
+                            playImgButton.setVisibility(View.VISIBLE);
+                        }
+                    };
+                }
                 //updateTimer(timerSeekBar.getProgress());
 
             }

@@ -15,11 +15,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".TulosActivity"></activity>
         <activity android:name=".TenttiActivity" />
-        <activity android:name=".YtjActivity" />
+        <activity android:name=".YtjActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".BottomNav"
             android:label="@string/title_activity_bottom_nav" />
-        <activity android:name=".GameActivity" />
+        <activity android:name=".GameActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

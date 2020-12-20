@@ -37,31 +37,21 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//
-//           Button findCompanyButton = view.findViewById(R.id.findCompanyButton);
-//           final EditText searchCompanyText = view.findViewById(R.id.searchCompanyText);
-//
-//            findCompanyButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//               String companyNameSearch = searchCompanyText.getText().toString();
-//                Intent intent = new Intent(getActivity(), YtjActivity.class);
-//                intent.putExtra("search", companyNameSearch);
-//
-//                startActivity(intent);
-//            }
-//        });
 
-        Button findCompanyButton = view.findViewById(R.id.findCompanyButton);
-        final EditText searchCompanyText = view.findViewById(R.id.searchCompanyText);
+           Button findCompanyButton = view.findViewById(R.id.findCompanyButton);
+           final EditText searchCompanyText = view.findViewById(R.id.searchCompanyText);
 
-        findCompanyButton.setOnClickListener(new View.OnClickListener() {
+            findCompanyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TenttiActivity.class);
+               String companyNameSearch = searchCompanyText.getText().toString();
+                Intent intent = new Intent(getActivity(), YtjActivity.class);
+                intent.putExtra("search", companyNameSearch);
+
                 startActivity(intent);
             }
         });
+
 
         return view;
     }

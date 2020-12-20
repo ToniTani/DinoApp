@@ -1,6 +1,7 @@
 package com.example.dinoapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -10,8 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import com.example.dinoapp.model.Score;
 import com.example.dinoapp.util.Prefs;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -197,7 +196,7 @@ public class GameActivity extends AppCompatActivity {
         score.setScore(scoreCounter);
         scoreTextView.setText(MessageFormat.format("Money ${0}", String.valueOf(score.getScore())));
 
-        // Log.d("SCORE", "addpoints" + score.getScore());
+        Log.d("SCORE", "addpoints" + score.getScore());
     }
     private void deductPoints() {
         scoreCounter -= 100;

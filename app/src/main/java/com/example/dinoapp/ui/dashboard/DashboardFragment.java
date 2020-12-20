@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -49,7 +50,7 @@ public class DashboardFragment extends Fragment implements LocationListener {
                              final ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        Button getLocation = view.findViewById(R.id.getLocation);
+        final Button getLocation = view.findViewById(R.id.getLocation);
         getLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,41 +65,48 @@ public class DashboardFragment extends Fragment implements LocationListener {
         textView3 = view.findViewById(R.id.textView3);
 
 
-        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-        LocationListener locationListener = new LocationListener() {
+        LocationManager mLocationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        LocationListener mLocationListener = new LocationListener() {
 
-        @Override
-        public void onLocationChanged(Location location) {
+            @Override
+            public void onLocationChanged(Location location) {
 
-            textView3.setText(getAddress(location));
-        }
+                textView1.setText("Latitude: " + location.getLatitude());
+                textView2.setText("Longitude: " + location.getLongitude());
+                textView3.setText("Address: " + getAddress(location));
+    //            if (location != null)
+  //                  Log.v("Location Changed", location.getLatitude() + " and " + location.getLongitude());
+   //             mLocationManager.removeUpdates(mLocationListener);
 
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {
+            }
 
-        }
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
 
-        @Override
-        public void onProviderEnabled(String provider) {
+            }
 
-        }
+            @Override
+            public void onProviderEnabled(String provider) {
 
-        @Override
-        public void onProviderDisabled(String provider) {
+            }
 
-        }
-    };
+            @Override
+            public void onProviderDisabled(String provider) {
 
-    if (locationManager == null) {
-        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+            }
+        };
+
+    if (mLocationManager == null) {
+        mLocationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
     }
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
         ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
     } else {
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500000, 0, locationListener);
 
-        location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-    }
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000000, 0, mLocationListener);
+
+        location = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        }
         return view;
     }
     private String getAddress(Location location) {
@@ -107,6 +115,7 @@ public class DashboardFragment extends Fragment implements LocationListener {
             List<Address> addresses = geocoder.getFromLocation(
                     location.getLatitude(),
                     location.getLongitude(), 1);
+
 
                 Address address = addresses.get(0);
                 currentLocation = address.getAddressLine(0);
@@ -117,6 +126,7 @@ public class DashboardFragment extends Fragment implements LocationListener {
         Log.i(TAG, currentLocation);
         return currentLocation;
     }
+
 
     @Override
     public void onLocationChanged(Location location) {
