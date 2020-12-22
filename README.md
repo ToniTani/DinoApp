@@ -8,10 +8,12 @@ Search results show the company's name, business ID, company form and date of re
 
 ## Casino Game
 1/3 change of winnig, right answer +200 and wrong answer -100. High Score saved using Shared preferences.
+
 ![game2](https://user-images.githubusercontent.com/43187463/102724514-b3380080-4318-11eb-82ce-9bf7b8afef89.gif)
 
 ## Timer - Play, Pause, Stop
 Language switched to finnish.
+
 ![timerfin4](https://user-images.githubusercontent.com/43187463/102925855-cffd4100-449c-11eb-8b46-916580ff315b.gif)
 
 ## Location on app and on a new webview
