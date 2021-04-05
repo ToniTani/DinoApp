@@ -2,7 +2,7 @@
 Android Course Project contains various different tasks that are demonstrated below.
 
 ## Company Search from YTJ api
-Search results show the company's name, business ID, company form and date of registration. The business ID, company form and registration date can be displayed by clicking on the company name. User can filter the results based on the text entered in search.
+Search results show the company's name, business ID, company form and date of registration. Business ID, company form and registration date can be displayed by clicking on the company name. User can filter results based on the text entered in the searchbox.
 
 ![newytj2](https://user-images.githubusercontent.com/43187463/102723874-fd6ab300-4313-11eb-9b8e-9c70c54429d5.gif)
 
