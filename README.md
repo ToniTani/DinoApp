@@ -1,5 +1,5 @@
 # DinoApp
-Android Course Project contains various different tasks that are demonstrated below.
+Android Course Project contains various different tasks those are demonstrated below.
 
 ## Company Search from YTJ api
 Search results show the company's name, business ID, company form and date of registration. Business ID, company form and registration date can be displayed by clicking on the company name. User can filter results based on the text entered in the searchbox.
